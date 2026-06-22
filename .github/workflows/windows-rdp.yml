@@ -41,23 +41,6 @@ jobs:
           Write-Host ""
           Write-Host "IMPORTANT: The tunnel URL is shown in the runner's PowerShell window."
           Write-Host "To find it, check the runner's console output above."
-        
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
 
       - name: Keep Session Alive
         run: |
