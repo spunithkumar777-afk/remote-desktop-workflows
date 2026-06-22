@@ -25,22 +25,39 @@ jobs:
 
       - name: Start Cloudflare Tunnel
         run: |
-          Write-Host "============================================"
-          Write-Host "🚀 WINDOWS RDP - CLOUDFLARE TUNNEL"
-          Write-Host "============================================"
+          Write-Host "WINDOWS RDP - CLOUDFLARE TUNNEL"
           Write-Host ""
-          Start-Process PowerShell -ArgumentList '-NoExit -Command "cloudflared tunnel --url tcp://localhost:3389"'
-          Start-Sleep -Seconds 15
+          $process = Start-Process PowerShell -ArgumentList '-NoExit -Command "cloudflared tunnel --url tcp://localhost:3389"' -PassThru
+          Start-Sleep -Seconds 20
           Write-Host ""
-          Write-Host "✅ TUNNEL STARTED! Check separate PowerShell window for URL"
+          Write-Host "TUNNEL STARTED!"
           Write-Host ""
-          Write-Host "📋 CONNECTION DETAILS:"
-          Write-Host "   USERNAME: runneradmin"
-          Write-Host "   PASSWORD: P@ssw0rd123!"
-          Write-Host "   OS: Windows Server 2022"
-          Write-Host "   CPU: 4 cores"
-          Write-Host "   RAM: 16GB"
-          Write-Host "============================================"
+          Write-Host "CONNECTION DETAILS:"
+          Write-Host "USERNAME: runneradmin"
+          Write-Host "PASSWORD: P@ssw0rd123!"
+          Write-Host "OS: Windows Server 2022"
+          Write-Host "CPU: 4 cores"
+          Write-Host "RAM: 16GB"
+          Write-Host ""
+          Write-Host "IMPORTANT: The tunnel URL is shown in the runner's PowerShell window."
+          Write-Host "To find it, check the runner's console output above."
+        
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
 
       - name: Keep Session Alive
         run: |
